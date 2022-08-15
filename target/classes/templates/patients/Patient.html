@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+
+<title>User Registration</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+
+    <h1>Patients Personal Information </h1> 
+
+
+    <form action="#" th:action="@{/register}" method="post" th:object="${patient}">
+         <input type="hidden" th:field="*{id}"/>
+               <div class="form-row">
+               
+                    <div class="col-md-6 form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" th:field="*{name}">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Email </label>
+                        <input type="text" class="form-control" th:field="*{email}">
+                    </div>
+                    
+                                    
+                    <div class="col-md-6 form-group">
+                        <label>Mobile Number </label>
+                        <input type="text" class="form-control" th:field="*{mobilenumber}">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Age</label>
+                        <input type="number" class="form-control" th:field="*{age}">
+                    </div>
+                    
+         <div class="col-md-6 form-group">
+                        <label>Profession</label>
+                        <input type="text" step="any" class="form-control" th:field="*{profession}">
+                    </div> 
+                      <div class="col-md-6 form-group">
+                        <label>Home District</label>
+                        <input type="text" step="any" class="form-control" th:field="*{homeDistrict}">
+                    </div> 
+                  
+                    
+                      <div class="col-md-6 form-group">
+                        <Strong>Marital Status</Strong>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" th:field="*{maritalStatus}" id="option1" value="Married">
+                            <label class="form-check-label" for="option1">Married</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" th:field="*{maritalStatus}" id="option2" value="Un-married">
+                            <label class="form-check-label" for="option2">Un-married</label>
+                        </div>
+                    </div>
+                    
+                       <div class="col-md-6 form-group">
+                        <label>Gender</label>
+                        <select class="form-control" th:field="*{gender}">
+                            <option value="">Choose...</option>
+                            <option value="MALE">MALE</option>
+                            <option value="FEMALE">FEMALE</option>
+                            <option value="OTHERS">OTHERS</option>
+                        </select>
+                    </div>
+                    
+                        <div class="col-md-6 form-group">
+                        <label>Short Description of Symptoms:</label>
+                        <textarea rows="5" cols="25"  class="form-control" th:field="*{note}"></textarea>
+                    </div>
+        
+                    </div>
+       
+                 <button type="submit" class="btn btn-primary btn-block mt-3">Save</button>
+
+          
+    </form>
+</div>
+</div>
+</div>
+</body>
+</html>
